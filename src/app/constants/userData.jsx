@@ -7,6 +7,7 @@ const userData = {
     textoPredefinido:'Hola, me gustaria consultar sobre, ',
     cuil:'30-71038683-4',
     direccion:'Av Champagnat 1167, Mar del Plata',
+    horarios:'7hs a 18hs'
 };
 
 export default userData;

@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { MapIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import { MapIcon, EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/outline';
 import userData from '../../app/constants/userData';
 
 export default function Contact() {
@@ -35,15 +35,15 @@ export default function Contact() {
 
   return (
     <section id="contacto" className='bg-primary-background'>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-center items-center  place-items-center">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-center items-center  place-items-center">
         <h2 className='text-pink font-normal tracking-widest uppercase ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>Contacto</h2>
-        <div className="px-10 py-1 mb-2 text-center place-items-center bg-tertiary uppercase w-1/4"></div>
+        <div className="pt-1 mb-2 text-center place-items-center bg-tertiary uppercase w-1/4"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-8 pb-16 grid md:grid-cols-2 lg:grid-cols-2 gap-y-8 md:gap-x-8 md:gap-y-8 lg:gap-x-8 lg:gap-y-16">
         <article>
           <div className="flex items-center mt-8 space-x-2 text-dark-600 text-[#000000]">
             <MapIcon className="w-4 h-4" />
-            <span>Av Champagnat 1167, Mar del Plata</span>
+            <span>{userData.direccion}</span>
           </div>
 
           <div className="flex items-center mt-2 space-x-2 text-dark-600  text-[#000000] ">
@@ -54,6 +54,10 @@ export default function Contact() {
           <div className="flex items-center mt-2 space-x-2 text-dark-600 text-[#000000]">
             <PhoneIcon className="w-4 h-4" />
             <a href={`tel:+${userData.codigoPais}${userData.contact}`} title={userData.contact}>+{userData.codigoPais}{userData.contact}</a>
+          </div>
+          <div className="flex items-center mt-2 space-x-2 text-dark-600 text-[#000000]">
+            <ClockIcon className="w-4 h-4" />
+            <span>{userData.horarios}</span>
           </div>
         </article>
         <article>
