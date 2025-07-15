@@ -25,7 +25,7 @@ const Gallery = () => {
                             </div>
                             <div className='grid grid-cols-2 gap-2'>
                                 <div className='overflow-hidden rounded-3xl'>
-                                    <img src="/images/Gallery/3.webp" alt="Fotos de La Galeria" title="Fotos de La Galeria" aria-label="Fotos de La Galeria" width={500} height={405} className="inner-img" loading="lazy"/>
+                                    <img src="/images/Gallery/4.webp" alt="Fotos de La Galeria" title="Fotos de La Galeria" aria-label="Fotos de La Galeria" width={500} height={405} className="inner-img" loading="lazy"/>
                                 </div>
                                 <div className='overflow-hidden rounded-3xl'>
                                     <img src="/images/Gallery/4.webp" alt="Fotos de La Galeria" title="Fotos de La Galeria" aria-label="Fotos de La Galeria" width={500} height={405} className="inner-img" loading="lazy"/>
@@ -42,7 +42,7 @@ const Gallery = () => {
                                     <img src="/images/Gallery/5.webp" alt="Fotos de La Galeria" title="Fotos de La Galeria" aria-label="Fotos de La Galeria" width={500} height={405} className="inner-img" loading="lazy"/>
                                 </div>
                                 <div className='overflow-hidden rounded-3xl'>
-                                    <img src="/images/Gallery/6.webp" alt="Fotos de La Galeria" title="Fotos de La Galeria" aria-label="Fotos de La Galeria" width={500} height={405} className="inner-img" loading="lazy"/>
+                                    <img src="/images/Gallery/5.webp" alt="Fotos de La Galeria" title="Fotos de La Galeria" aria-label="Fotos de La Galeria" width={500} height={405} className="inner-img" loading="lazy"/>
                                 </div>
                             </div>
                             <div className="row-span-1 overflow-hidden rounded-3xl">

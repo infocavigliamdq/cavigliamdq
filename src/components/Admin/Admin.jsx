@@ -169,7 +169,7 @@ export default function Admin() {
         <Nav handleSelectSection={handleSelectSection} />
         {section === 'Productos' && (
           <div>
-            <section id="tablaProductosAdmin" className="bg-primary-background p-2 sm:p-3 md:p-5">
+            <section id="tablaProductosAdmin" className="bg-blue-50 p-2 sm:p-3 md:p-5">
               <div className="mx-auto max-w-screen-xl px-0 lg:px-12">
                 <div className="bg-white relative shadow-md sm:rounded-lg overflow-hidden">
                   <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">

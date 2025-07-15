@@ -12,7 +12,7 @@ function Etiquetas({ data }) {
       {/* Encabezado */}
       <div className="bg-primary text-white text-2xl font-bold p-2 flex justify-around items-center rounded-md uppercase text-center">
         <span>ENVÍO</span>
-        <img src="/logos/LogoCentral2.webp" className="h-12" />
+        <img src="/logos/logoCentral.webp" className="h-14" />
       </div>
 
       {/* Cuerpo en dos columnas */}
