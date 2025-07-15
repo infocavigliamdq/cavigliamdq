@@ -182,7 +182,7 @@ export default function UploadImage({ imagenes, updateImages, handleRemoveImage 
         draggable
         pauseOnHover
       />
-      <div className="flex mt-[10px]">
+      {/* <div className="flex mt-[10px]">
         <Button
           component="label"
           role={undefined}
@@ -192,7 +192,7 @@ export default function UploadImage({ imagenes, updateImages, handleRemoveImage 
           Subir Archivo
           <VisuallyHiddenInput type="file" multiple onChange={handleArchivoSeleccionado} />
         </Button>
-      </div>
+      </div> */}
 
       {archivos.length !== 0 && (
         <div className="relative pb-[50px] bg-white mt-[20px] rounded-md ">
@@ -209,8 +209,9 @@ export default function UploadImage({ imagenes, updateImages, handleRemoveImage 
                   title={archivo.name}
                 />
 
-                 <Button
+                 {/* <Button
                     type="button"
+                    
                     aria-label="eliminar archivo"
                     onClick={() => handleEliminarArchivo(index)}
                     aria-controls="drawer-navigation"
@@ -231,7 +232,7 @@ export default function UploadImage({ imagenes, updateImages, handleRemoveImage 
                         d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                       />
                     </svg>
-                  </Button>
+                  </Button> */}
 
               </div>
             ))}

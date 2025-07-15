@@ -104,7 +104,7 @@ const generarPDF = async (empresa, items, tipoDocumento, fecha, pagos) => {
   doc.setFontSize(10)
   doc.text('Este documento no es válido como factura. Contiene precios finales con impuestos incluidos.', 30, 285)
   doc.textWithLink('Para ver más productos puede ingresar en www.caviglia.com', 30, 291, {
-    url: 'https://www.caviglia.com'
+    url: 'https://www.repuestoscaviglia.com'
   })
 
   // Exportar archivo

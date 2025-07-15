@@ -95,7 +95,7 @@ export default function Nav( {handleSelectSection} ) {
           type="button"
           onClick={toggleMenu}
           aria-controls="drawer-navigation"
-          className="bg-gray-300 text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center "
+          className="bg-primary text-gray-900 hover:bg-tertiary focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center "
         >
           <svg
             className="w-3 h-3"
@@ -135,7 +135,7 @@ export default function Nav( {handleSelectSection} ) {
                 <span className="ml-3 text-gray-200 ">Productos</span>
               </a>
             </li>
-            {/* Productos Destacados  */}
+            {/* Productos Destacados 
             <li>
               <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-primary-hover group" onClick={() => {
                   handleSelectSection("Destacados");
@@ -156,7 +156,7 @@ export default function Nav( {handleSelectSection} ) {
                   Productos destacados
                 </span>
               </a>
-            </li>
+            </li> */}
 
             {/* Comprobantes */}
             <li>

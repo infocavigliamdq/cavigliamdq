@@ -3,6 +3,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import ReactDOM from 'react-dom/client';
 import AddProduct from "./AddProduct/AddProduct";
 import UpdateProduct from "./UpdateProduct/UpdateProduct";
+import VerProduct from "./VerProduct/VerProduct";
 import Presupuestos from "./Presupuestos/Presupuestos";
 import Etiquetas from './Etiquetas/Etiquetas'
 import useProducts from "../../Hooks/useProducts";
@@ -217,7 +218,7 @@ export default function Admin() {
                           <th scope="col" className="px-1 py-2 md:px-4 md:py-3 text-center hidden md:table-cell">Categoría</th>
                           <th scope="col" className="px-1 py-2 md:px-4 md:py-3 text-center hidden md:table-cell">Marca</th>
                           <th scope="col" className="px-1 py-2 md:px-4 md:py-3 text-center hidden lg:table-cell">Descripción</th>
-                          <th scope="col" className="px-1 py-2 md:px-4 md:py-3 text-center">Acción</th>
+                          <th scope="col" className="px-1 py-2 md:px-4 md:py-3 text-center ">Acción</th>
                         </tr>
                       </thead>
                       {products.length ? (
@@ -231,15 +232,20 @@ export default function Admin() {
                               <td scope="row" className="px-1 py-6 md:px-4 md:py-4">
                                 <div className="flex justify-evenly items-center mx-1">
                                   <button
+                                  hidden
                                     aria-label="editar producto"
                                     id="updateProductButton"
                                     data-modal-target="updateProductModal"
                                     data-modal-toggle="updateProductModal"
                                     className="px-3 py-2 text-xs items-center focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg me-2 "
                                     type="button"
+                                    disabled
                                     onClick={() => openModal('update', product)}>Editar</button>
-                                  <button aria-label="Eliminar Producto" onClick={() => handleEliminarArchivos(product)} type="button" className="px-3 py-2 text-xs focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg ">
+                                  <button hidden aria-label="Eliminar Producto" onClick={() => handleEliminarArchivos(product)} type="button" disabled className="px-3 py-2 text-xs focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg ">
                                     Eliminar
+                                  </button>
+                                  <button aria-label="ver Producto" onClick={() => openModal('ver', product)} type="button" className="px-3 py-2 text-xs focus:outline-none text-gray-800 bg-secondary hover:bg-primary hover:text-white focus:ring-4 focus:ring-secondary font-medium rounded-lg ">
+                                    ver
                                   </button>
                                 </div>
                               </td>
@@ -280,15 +286,25 @@ export default function Admin() {
                 vehiculo={vehiculos}
               />
             )}
+            {isModalOpen && modalType === 'ver' && selectedProduct && (
+              <VerProduct
+                toggleModal={closeModal}
+                isOpenModal={isModalOpen}
+                product={selectedProduct}
+                marca={brands}
+                categoria={categories}
+                vehiculo={vehiculos}
+              />
+            )}
           </div>
         )}
 
         <div className="flex-1 bg-primary-background p-3 sm:p-5">
-          {section === 'Destacados' && (
+          {/* {section === 'Destacados' && (
             <div className="mx-auto max-w-screen-xl lg:px-12">
               <TablaDestacados />
             </div>
-          )}
+          )} */}
 
           {section === 'DescargarCSV' && (
             <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
