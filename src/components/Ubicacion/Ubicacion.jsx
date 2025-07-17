@@ -6,7 +6,7 @@ const Ubicacion = () => {
         <section id="ubicacion" className="mx-auto w-full">
             <article className='flex flex-col items-center justify-center py-2 m-2 max-w-7xl mx-auto rounded-xl'>
                 <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-center items-center  place-items-center mb-4">
-                    <h2 className='text-pink font-normal tracking-widest uppercase ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>¿Dónde nos encontras?</h2>
+                    <h2 className='text-pink font-normal tracking-widest italic font-serif ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>¿Dónde estamos?</h2>
                     <div className="px-10 pt-1 mb-4 text-center place-items-center bg-tertiary uppercase w-1/4"></div>
                 </div>
                 <iframe

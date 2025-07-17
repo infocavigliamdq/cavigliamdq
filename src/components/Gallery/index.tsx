@@ -9,7 +9,7 @@ const Gallery = () => {
                 <div className="text-center items-center align-middle justify-center self-center place-items-center">
                     <Fade direction={'up'} delay={400} cascade damping={1e-1} triggerOnce={true}>
                         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-center items-center  place-items-center">
-                            <h2 className='text-pink font-normal tracking-widest uppercase ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>Galeria</h2>
+                            <h2 className='text-pink font-normal tracking-widest italic font-serif ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>Galeria</h2>
                             <div className="px-10 pt-1 mb-2 text-center place-items-center bg-tertiary uppercase w-1/4"></div>
                         </div>
                     </Fade>
