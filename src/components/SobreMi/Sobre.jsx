@@ -22,23 +22,28 @@ const Sobre = () => {
         {/* TEXT SECTION */}
         <div className="w-full lg:w-1/2 flex items-center lg:items-start justify-center p-8 lg:py-1 lg:px-8 bg-white z-10">
           <div className="max-w-xl">
-            <h2 className=" font-serif text-2xl md:mt-2 italic self-center text-primary">Nuestra Historia</h2>
-            {/* <div className="pt-1 px4 bg-primary"></div> */}
+            <h2 className="font-serif text-2xl md:mt-2 italic self-center text-primary">
+              Nuestra Historia
+            </h2>
             <div className="pt-1 px4 bg-tertiary mb-4"></div>
-            {/* <div className="pt-1 px4 bg-secondary mb-2"></div> */}
+          
             <h1 className="text-gray-700 mb-4">
-              Fundada en <strong>1979</strong> en Mar del Plata, <strong>Repuestos Caviglia</strong> ha sido sinónimo de calidad y compromiso en el rubro de repuestos para camiones y maquinaria pesada.
+              Desde <strong>1980</strong>, en <strong>Mar del Plata</strong>, <strong>Repuestos Caviglia</strong> ofrece soluciones en <strong>repuestos para camiones Fiat</strong>, <strong>IVECO</strong> y maquinaria pesada. Comenzamos como un pequeño negocio familiar.
             </h1>
+          
             <p className="text-gray-700 mb-4">
-              Nos especializamos principalmente en las marcas <strong>Iveco</strong> y <strong>Fiat</strong>, ofreciendo repuestos originales y alternativos con un amplio stock y asesoramiento técnico personalizado.
+              Nos especializamos en <strong>repuestos originales y alternativos</strong> para las marcas <strong>Iveco</strong> y <strong>Fiat</strong>, con un amplio stock permanente, atención técnica personalizada y asesoramiento profesional.
             </p>
+          
             <p className="text-gray-700 mb-4">
-              A lo largo de más de <strong>40 años</strong>, construimos una relación de confianza con nuestros clientes, brindando atención experta, envíos a todo el país y soluciones concretas para el transporte pesado.
+              Con más de <strong>45 años de trayectoria</strong>, construimos una sólida relación de confianza con nuestros clientes del sector del <strong>transporte pesado</strong>, ofreciendo envíos a todo el país y soluciones rápidas y eficaces.
             </p>
+          
             <p className="text-gray-700">
-              Actualmente, estamos ubicados en <strong>Av. Champagnat 1167</strong>, Mar del Plata, y seguimos trabajando con la misma pasión de siempre, acompañando al sector en cada kilómetro.
+              Hoy nos encontramos en <strong>Av. Champagnat 1167</strong>, Mar del Plata, donde continuamos con la misma pasión de siempre, comprometidos con la calidad, la atención personalizada y el respaldo que el rubro exige.
             </p>
           </div>
+
         </div>
 
         {/* IMAGE with diagonal for md+ screens only */}
