@@ -2,6 +2,7 @@ const userData = {
     name:'Caviglia SRL',
     contact:2235383512,
     codigoPais:54,
+    telFijo:2234701233,
     textBoton:'¡Contáctame!',
     email:'cavigliarepuestos@gmail.com',
     textoPredefinido:'Hola, me gustaria consultar sobre, ',
