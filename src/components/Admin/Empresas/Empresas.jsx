@@ -13,6 +13,7 @@ export default function EmpresaForm() {
   const [form, setForm] = useState({
     nombre: '',
     direccion: '',
+    localidad: '',
     mail: '',
     telefono: '',
     cuil: '',
@@ -44,7 +45,7 @@ export default function EmpresaForm() {
 
     if (res.ok) {
       fetchEmpresas();
-      setForm({ nombre: '', direccion: '', mail: '', telefono: '', cuil: '', tipo: '' });
+      setForm({ nombre: '', direccion: '',localidad:'', mail: '', telefono: '', cuil: '', tipo: '' });
       setEditingId(null);
     }
   };
@@ -92,7 +93,7 @@ export default function EmpresaForm() {
       </div>
 
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        {['nombre', 'direccion', 'mail', 'telefono', 'cuil'].map((field) => (
+        {['nombre', 'direccion', 'localidad', 'mail', 'telefono', 'cuil'].map((field) => (
           <Input
             key={field}
             name={field}
@@ -129,7 +130,7 @@ export default function EmpresaForm() {
               variant="outline"
               className="col-span-1 md:col-span-2 bg-red-500 text-white w-40"
               onClick={() => {
-                setForm({ nombre: '', direccion: '', mail: '', telefono: '', cuil: '', tipo: '' });
+                setForm({ nombre: '', direccion: '',localidad: '', mail: '', telefono: '', cuil: '', tipo: '' });
                 setEditingId(null);
               }}
             >
@@ -147,6 +148,7 @@ export default function EmpresaForm() {
           <CardContent className="space-y-2">
             <p className="text-lg font-semibold">{empresa.nombre}</p>
             <p>{empresa.direccion}</p>
+            <p>{empresa.localidad}</p>
             <p>{empresa.mail}</p>
             <p>{empresa.telefono}</p>
             <p>{empresa.cuil}</p>

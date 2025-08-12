@@ -33,8 +33,10 @@ const generarPDF = async (empresa, items, tipoDocumento, fecha, pagos) => {
   doc.text(`${userData.name}`, 15, 35)
   doc.text(`${userData.email}`, 15, 42)
   doc.addImage(whatsLogo, 'PNG', 15, 46.5, 5, 5); // x, y, width, height
-  doc.text(`+${userData.codigoPais}${userData.contact}`, 22, 50);
-  doc.text(`${userData.cuil}`, 15, 56)
+  doc.text(`+${userData.codigoPais}${userData.administracion.contacto}`, 22, 50);
+  doc.addImage(whatsLogo, 'PNG', 15, 53.5, 5, 5); // x, y, width, height
+  doc.text(`+${userData.codigoPais}${userData.ventas.contacto}`, 22, 57);
+  doc.text(`${userData.cuil}`, 15, 64)
 
   // Datos del cliente
   doc.text(`Empresa: ${empresa.nombre || '-'}`, clienteX, 35)

@@ -20,6 +20,7 @@ const Presupuestos = () => {
   const [empresa, setEmpresa] = useState({
     nombre: '',
     direccion: '',
+    localidad:'',
     mail: '',
     telefono: '',
     cuil: '',
@@ -34,6 +35,7 @@ const Presupuestos = () => {
     setEmpresa({
       nombre: empresaSeleccionada.nombre || '',
       direccion: empresaSeleccionada.direccion || '',
+      localidad: empresaSeleccionada.localidad || '',
       mail: empresaSeleccionada.mail || '',
       telefono: empresaSeleccionada.telefono || '',
       cuil: empresaSeleccionada.cuil || '',
@@ -161,6 +163,7 @@ const Presupuestos = () => {
           setEmpresa({
             nombre: '',
             direccion: '',
+            localidad:'',
             mail: '',
             telefono: '',
             cuil: '',
@@ -192,6 +195,7 @@ const Presupuestos = () => {
             setEmpresa({
               nombre: '',
               direccion: '',
+              localidad:'',
               mail: '',
               telefono: '',
               cuil: '',
@@ -272,6 +276,7 @@ const Presupuestos = () => {
           setEmpresa({
             nombre: empresa.nombre,
             direccion: empresa.direccion,
+            localidad: empresa.localidad,
             mail: empresa.mail,
             telefono: empresa.telefono,
             cuil: empresa.cuil,
@@ -284,6 +289,7 @@ const Presupuestos = () => {
           setEmpresa({
             nombre: '',
             direccion: '',
+            localidad:'',
             mail: '',
             telefono: '',
             cuil: '',

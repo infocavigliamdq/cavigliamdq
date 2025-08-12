@@ -10,6 +10,10 @@ const empresaSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  localidad:{
+    type: String,
+    trim:true,
+  },
   mail: {
     type: String,
     trim: true,

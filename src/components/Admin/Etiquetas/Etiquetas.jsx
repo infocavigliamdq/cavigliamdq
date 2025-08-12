@@ -21,13 +21,16 @@ function Etiquetas({ data }) {
         <div className="space-y-1 col-span-2">
           <p><strong>Para:</strong> {data.para}</p>
           <p><strong>Dirección:</strong> {data.direccion}</p>
-          <p><strong>Cel: </strong> {data.telefono}</p>
+          <p><strong>Localidad:</strong> {data.localidad}</p>
+          <p><strong>Cel: </strong> {data.telefonoCLI}</p>
         </div>
 
         {/* Columna derecha */}
         <div className="space-y-1">
           <p><strong>De:</strong> {data.de}</p>
-          <p className='flex items-center'><FaWhatsapp className='w-6 h-6'/> {data.cel}</p>
+          <p className='flex items-center align-bottom'><FaWhatsapp className='w-6 h-6'/>adm: {data.cel}</p>
+          <p className='flex items-center align-bottom'><FaWhatsapp className='w-6 h-6'/>vent: {data.vts}</p>
+
         </div>
       </div>
 
@@ -49,10 +52,12 @@ function Etiquetas({ data }) {
 export default function EtiquetaFormPDF() {
     const [formData, setFormData] = useState({
         de: userData.name,
-        cel: userData.contact,
+        cel: userData.administracion.contacto,
+        vts: userData.ventas.contacto,
         para: '',
         direccion:'',
-        telefono:'',
+        localidad:'',
+        telefonoCLI:'',
         totalBulto: '',
         despacharPor: '',
         bultoN: '',
@@ -61,8 +66,9 @@ export default function EtiquetaFormPDF() {
     const [empresa, setEmpresa] = useState({
       nombre: '',
       direccion: '',
+      localidad:'',
       mail: '',
-      telefono: '',
+      telefonoCLI: '',
       cuil: '',
       observaciones:'',
       tipo: ''
@@ -95,6 +101,7 @@ export default function EtiquetaFormPDF() {
                     setEmpresa({
                         nombre: empresaSeleccionada.nombre,
                         direccion: empresaSeleccionada.direccion,
+                        localidad: empresaSeleccionada.localidad,
                         mail: empresaSeleccionada.mail,
                         telefono: empresaSeleccionada.telefono,
                         cuil: empresaSeleccionada.cuil,
