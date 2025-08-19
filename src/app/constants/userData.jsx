@@ -8,7 +8,7 @@ const userData = {
     textoPredefinido:'Hola, me gustaria consultar sobre, ',
     cuil:'30-71038683-4',
     direccion:'Av Champagnat 1167, Mar del Plata',
-    horarios:'7hs a 18hs',
+    horarios:'8hs a 16hs',
     administracion: {
         label: 'Administración',
         contacto: 2235383512,
