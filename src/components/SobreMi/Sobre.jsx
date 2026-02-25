@@ -3,7 +3,7 @@ import "./Sobre.css";
 
 const Sobre = () => {
   return (
-    <div className="w-screen mx-auto h-auto overflow-hidden">
+    <div className="w-screen mx-auto h-auto overflow-hidden max-w-7xl">
       {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 text-center items-center  place-items-center mb-4">
         <h2 className='text-pink font-normal tracking-widest uppercase ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>nuestra hiostoria</h2>
         <div className="px-10 py-1 mb-4 text-center place-items-center bg-tertiary uppercase w-1/4"></div>
@@ -47,7 +47,7 @@ const Sobre = () => {
         </div>
 
         {/* IMAGE with diagonal for md+ screens only */}
-        <div className="hidden lg:block w-1/2 relative">
+        <div className="hidden lg:block w-1/2 relative translate-y-2">
           <div className="w-full h-96 diagonal-clip">
             <img
               src='/images/cavigliaPortada.webp'

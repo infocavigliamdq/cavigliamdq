@@ -1,7 +1,4 @@
 // pages/api/firebase.js
-import dotenv from 'dotenv';
-dotenv.config();
-
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 

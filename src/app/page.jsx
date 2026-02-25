@@ -15,6 +15,7 @@ import SearchBase from "../components/Search/SearchBase";
 import { defaultMetadata } from '../lib/metadata';
 import fetchProduct from '../Utils/fetchProduct';
 import Gallery from "../components/Gallery";
+import { CtaBanner } from "../components/Mercado/cta-banner";
 
 //import UnderConstruction from "@/components/sitioEnConstruccion/UnderConstruction";
 
@@ -70,6 +71,7 @@ export default function Home() {
         </Suspense> */}
           {/* <Carrusel /> */}
           <Sobre/>
+          <CtaBanner />
           <Ubicacion/>
           <Gallery />
           <Contact />

@@ -41,7 +41,7 @@ const PreguntasFrecuentes = () => {
   };
 
   return (
-    <div className="py-8 px-4 max-w-screen-xl sm:py-16 lg:px-6 overflow-y-auto max-auto " style={{textAlign:"-webkit-center"}}>
+    <div className="py-8 px-4 max-w-screen-7xl sm:py-16 lg:px-6 overflow-y-auto max-auto " style={{textAlign:"-webkit-center"}}>
       <div className="max-w-screen-md" >
         <div id="accordion-open" data-accordion="open">
           <h2 className="mb-4 text-3xl md:text-4xl text-center md:text-start tracking-tight font-extrabold text-text-primary-title">Preguntas frecuentes</h2>

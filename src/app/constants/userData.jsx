@@ -17,7 +17,7 @@ const userData = {
     },
     ventas: {
         label: 'Ventas',
-        contacto: 2235032141,
+        contacto: 2235383512,
         codigoPais: 54,
         textoPredefinido: 'Hola, me interesa saber más sobre productos o servicios.'
     }
