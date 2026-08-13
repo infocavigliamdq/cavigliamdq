@@ -244,7 +244,7 @@ export default function Admin() {
                                   <button hidden aria-label="Eliminar Producto" onClick={() => handleEliminarArchivos(product)} type="button" disabled className="px-3 py-2 text-xs focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg ">
                                     Eliminar
                                   </button>
-                                  <button aria-label="ver Producto" onClick={() => openModal('ver', product)} type="button" className="px-3 py-2 text-xs focus:outline-none text-gray-800 bg-secondary hover:bg-primary hover:text-white focus:ring-4 focus:ring-secondary font-medium rounded-lg ">
+                                  <button aria-label="ver Producto" onClick={() => openModal('ver', product)} type="button" className="px-3 py-2 text-xs focus:outline-none text-white bg-secondary hover:bg-primary hover:text-white focus:ring-4 focus:ring-secondary/40 font-medium rounded-lg ">
                                     ver
                                   </button>
                                 </div>

@@ -60,7 +60,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-secondary border-gray-200">
+    <nav className="bg-gradient-secondary border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 md:px-2 py-1">
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse my-2 pb-2" title="caviglia Logo">
           <img src={Logo.src} width={200} height={120} alt="CAVIGLIA Logo" title="CAVIGLIA Logo" loading='lazy'/>
@@ -78,7 +78,7 @@ const NavBar = () => {
             aria-label="menu"
             data-collapse-toggle="navbar-default"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-800 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
             aria-controls="navbar-default"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}
@@ -91,10 +91,10 @@ const NavBar = () => {
       </div>
 
         <article className={`w-full md:block md:w-auto ${isMenuOpen ? 'block' : 'hidden'}`} id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 items-center bg-secondary md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-secondary">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 items-center bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
             {Links?.map((link, key) => (
               <li key={key}>
-                <Link href={path === '/nosotros'? '/'+link.href : link.href} className={`block py-2 px-3 ${currentLink === link.href ? 'text-primary' : 'text-gray-900'} rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}
+                <Link href={path === '/nosotros'? '/'+link.href : link.href} className={`block py-2 px-3 ${currentLink === link.href ? 'text-secondary-light font-bold' : 'text-white'} rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-secondary-light transition-colors md:p-0`}
                   aria-current="page" onClick={() => handleLinkClick(link.href)} title={link.name.toLocaleUpperCase()}>
                   {link.name.toLocaleUpperCase()}
                 </Link>

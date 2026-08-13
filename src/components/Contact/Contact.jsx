@@ -1,138 +1,116 @@
 'use client';
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { MapIcon, EnvelopeIcon, PhoneIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { PhoneIcon, DevicePhoneMobileIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import userData from '../../app/constants/userData';
+import { SectionTitle } from '../ui/SectionTitle';
+import ContactFormModal from './ContactFormModal';
+
+const InstagramIcon = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fillRule="evenodd"
+      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const FacebookIcon = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fillRule="evenodd"
+      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const iconClass = 'w-8 h-8 md:w-9 md:h-9 shrink-0 text-gray-900';
+const itemClass =
+  'flex items-center gap-4 text-lg md:text-2xl text-gray-900 hover:text-boton-primary transition-colors';
 
 export default function Contact() {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm({ mode: 'onTouched' });
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [message, setMessage] = useState('');
-
-  const onSubmit = async (data, e) => {
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });      
-      if (response.status === 200) {
-        setIsSuccess(true);
-        setMessage('Correo enviado exitosamente');
-        reset();
-      } else {
-        setIsSuccess(false);
-        setMessage('Error al enviar el correo');
-      }
-    } catch (error) {
-      setIsSuccess(false);
-      setMessage('Client Error. Please check the console.log for more info');
-      console.error(error);
-    }
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section id="contacto" className='bg-primary-background'>
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 text-center items-center  place-items-center">
-        <h2 className='text-pink font-normal tracking-widest italic font-serif ls-51 mb-4 text-3xl md:text-4xl text-center text-tertiary'>Contacto</h2>
-        <div className="pt-1 mb-2 text-center place-items-center bg-tertiary uppercase w-1/4"></div>
+    <section id="contacto" className="bg-primary-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <SectionTitle>Contacto</SectionTitle>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 md:pt-8 pb-16 grid md:grid-cols-2 lg:grid-cols-2 gap-y-8 md:gap-x-8 md:gap-y-8 lg:gap-x-8 lg:gap-y-16">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 grid md:grid-cols-2 gap-y-10 md:gap-x-12 items-center">
+        {/* COLUMNA IZQUIERDA: datos de contacto */}
         <article>
-          <div className="flex items-center mt-8 space-x-2 text-dark-600 text-[#000000]">
-            <MapIcon className="w-4 h-4" />
-            <span>{userData.direccion}</span>
-          </div>
+          <ul className="space-y-6 md:space-y-8">
+            <li>
+              <a
+                href={userData.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+                className={itemClass}
+              >
+                <InstagramIcon className={iconClass} />
+                <span>{userData.instagram.usuario}</span>
+              </a>
+            </li>
 
-          <div className="flex items-center mt-2 space-x-2 text-dark-600  text-[#000000] ">
-            <EnvelopeIcon className="w-4 h-4" />
-            <a href={`mailto:${userData.email}`} title={userData.email}>{userData.email}</a>
-          </div>
+            <li>
+              <a
+                href={userData.facebook.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Facebook"
+                className={itemClass}
+              >
+                <FacebookIcon className={iconClass} />
+                <span>{userData.facebook.usuario}</span>
+              </a>
+            </li>
 
-          <div className="flex items-center mt-2 space-x-2 text-dark-600 text-[#000000]">
-            <PhoneIcon className="w-4 h-4" />
-            <a href={`tel:+${userData.telFijo}`} title={userData.telFijo}>+{userData.codigoPais}{userData.telFijo}</a>
-          </div>
-          <div className="flex items-center mt-2 space-x-2 text-dark-600 text-[#000000]">
-            <ClockIcon className="w-4 h-4" />
-            <span>{userData.horarios}</span>
-          </div>
-        </article>
-        <article>
-          {!isSubmitSuccessful && (
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <input type="hidden" value='Consulta' {...register('subject')} />
-              <input type="hidden" value="Enviado desde la WEB" {...register('from_name')} />
-              <input type="checkbox" id="check" className="hidden" style={{ display: 'none' }} {...register('botcheck')} />
+            <li>
+              <a href={`tel:+${userData.codigoPais}${userData.telFijo}`} title="Teléfono fijo" className={itemClass}>
+                <PhoneIcon className={iconClass} />
+                <span>4701233</span>
+              </a>
+            </li>
 
-              <div className="mb-5">
-                <label htmlFor="nameContact" className="sr-only">Nombre</label>
-                <input id="nameContact" type="text" placeholder="Nombre" autoComplete="off" className={`w-full px-4 py-3 border-2 bg-primary-background placeholder:text-neutral-800 text-[#000000] rounded-md outline-none focus:ring-4 ${errors.name ? 'border-red-500 focus:border-red-500 ring-red-100  ' : 'border-neutral-300 ring-neutral-100 '}`}
-                  {...register('name', { required: 'Ingresa tu nombre completo', maxLength: 80 })}
-                />
-                {errors.name && <div className="mt-1 text-text-danger"><small>{errors.name.message}</small></div>}
-              </div>
+            <li>
+              <a href={`tel:+${userData.codigoPais}${userData.contact}`} title="Celular" className={itemClass}>
+                <DevicePhoneMobileIcon className={iconClass} />
+                <span>{userData.contact}</span>
+              </a>
+            </li>
 
-              <div className="mb-5">
-                <label htmlFor="email_addressContact" className="sr-only">Email</label>
-                <input id="email_addressContact" type="email" placeholder="Email" autoComplete="off" className={`w-full px-4 py-3 border-2 bg-primary-background placeholder:text-neutral-800 text-[#000000] rounded-md outline-none  focus:ring-4 ${errors.email ? 'border-red-500 focus:border-red-500 ring-red-100  ' : 'border-neutral-300 focus:border-neutral-600 ring-neutral-100  '}`}
-                  {...register('email', { required: 'Ingresa tu correo electrónico', pattern: { value: /^\S+@\S+$/i, message: 'Por favor, ingresa un correo electrónico válido' } })}
-                />
-                {errors.email && <div className="mt-1 text-text-danger"><small>{errors.email.message}</small></div>}
-              </div>
-
-              <div className="mb-3">
-                <textarea name="message" placeholder="Mensaje..." className={`w-full px-4 py-3 border-2 bg-primary-background placeholder:text-neutral-800   text-[#000000]     rounded-md outline-none h-36 focus:ring-4 ${errors.message ? 'border-red-500 focus:border-red-500 ring-red-100  ' : 'border-neutral-300 focus:border-neutral-600 ring-neutral-100    '}`}
-                  {...register('message', { required: 'Ingresa tu mensaje' })}
-                />
-                {errors.message && <div className="mt-1 text-text-danger"><small>{errors.message.message}</small></div>}
-              </div>
-
-              <button type="submit" className="w-full py-4 font-semibold text-white transition-colors rounded-md bg-boton-primary hover:bg-boton-primary-hover active:bg-boton-primary-active px-7 " aria-label="enviar">
-                {isSubmitting ? (
-                  <svg className="w-5 h-5 mx-auto text-white   animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" ></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" ></path>
-                  </svg>
-                ) : (
-                  'Enviar Mensaje'
-                )}
+            <li>
+              <button type="button" onClick={() => setIsModalOpen(true)} className={itemClass} aria-label="abrir formulario de consulta">
+                <EnvelopeIcon className={iconClass} />
+                <span>Envianos tu consulta</span>
               </button>
-            </form>
-          )}
+            </li>
+          </ul>
+        </article>
 
-          {isSubmitSuccessful && isSuccess && (
-            <div className="flex flex-col items-center justify-center text-center text-white rounded-md">
-              <svg width="100" height="100" className="text-green-500" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M26.6666 50L46.6666 66.6667L73.3333 33.3333M50 96.6667C43.8716 96.6667 37.8033 95.4596 32.1414 93.1144C26.4796 90.7692 21.3351 87.3317 17.0017 82.9983C12.6683 78.6649 9.23082 73.5204 6.8856 67.8586C4.54038 62.1967 3.33331 56.1283 3.33331 50C3.33331 43.8716 4.54038 37.8033 6.8856 32.1414C9.23082 26.4796 12.6683 21.3351 17.0017 17.0017C21.3351 12.6683 26.4796 9.23084 32.1414 6.88562C37.8033 4.5404 43.8716 3.33333 50 3.33333C62.3767 3.33333 74.2466 8.24998 82.9983 17.0017C91.75 25.7534 96.6666 37.6232 96.6666 50C96.6666 62.3768 91.75 74.2466 82.9983 82.9983C74.2466 91.75 62.3767 96.6667 50 96.6667Z"
-                  stroke="currentColor" strokeWidth="3"
-                />
-              </svg>
-              <h3 className="py-5 text-2xl font-medium text-green-500">EXITO</h3>
-              <p className="text-neutral-900 md:px-4">{message}</p>
-              <button className="mt-6 py-2 px-4 bg-red-500 rounded-full focus:outline-none text-neutral-100" onClick={() => reset()} aria-label="volver"> Volver</button>
-            </div>
-          )}
-
-          {isSubmitSuccessful && !isSuccess && (
-            <div className="flex flex-col items-center justify-center text-center text-neutral-900   rounded-md">
-              <svg width="97" height="97" viewBox="0 0 97 97" className="text-red-500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M27.9995 69C43.6205 53.379 52.3786 44.621 67.9995 29M26.8077 29L67.9995 69M48.2189 95C42.0906 95 36.0222 93.7929 30.3604 91.4477C24.6985 89.1025 19.554 85.6651 15.2206 81.3316C10.8872 76.9982 7.44975 71.8538 5.10454 66.1919C2.75932 60.53 1.55225 54.4617 1.55225 48.3333C1.55225 42.205 2.75932 36.1366 5.10454 30.4748C7.44975 24.8129 10.8872 19.6684 15.2206 15.335C19.554 11.0016 24.6985 7.56418 30.3604 5.21896C36.0222 2.87374 42.0906 1.66667 48.2189 1.66667C60.5957 1.66667 72.4655 6.58333 81.2172 15.335C89.9689 24.0867 94.8856 35.9566 94.8856 48.3333C94.8856 60.7101 89.9689 72.58 81.2172 81.3316C72.4655 90.0833 60.5957 95 48.2189 95Z"
-                  stroke="CurrentColor"
-                  strokeWidth="3"
-                />
-              </svg>
-              <h3 className="py-5 text-2xl font-medium text-text-danger">Oops, Algo ocurrio!</h3>
-              <p className="text-neutral-900 md:px-4">{message}</p>
-              <button className="mt-6 py-2 px-4 bg-red-500 rounded-full focus:outline-none text-neutral-100" onClick={() => reset()} aria-label="intentar otra vez"> Volver a intentar </button>
-            </div>
-          )}
+        {/* COLUMNA DERECHA: mapa + horarios */}
+        <article className="w-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.026565567246!2d-57.58252812336558!3d-37.976509343357975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584d9147152be51%3A0xbb84e08715f0b6ec!2sCaviglia%20repuestos!5e0!3m2!1ses!2sar!4v1752512005583!5m2!1ses!2sar"
+            height="320"
+            allowFullScreen={true}
+            className="w-full rounded-lg border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Ubicación del local"
+          />
+          <div className="mt-4 text-center text-lg md:text-xl text-gray-900">
+            {userData.horariosDetalle.map((horario) => (
+              <p key={horario}>{horario}</p>
+            ))}
+          </div>
         </article>
       </div>
+
+      <ContactFormModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

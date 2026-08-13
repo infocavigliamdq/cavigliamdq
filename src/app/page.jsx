@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <>
-      <nav>
+      <nav className="sticky top-0 z-50 shadow-md">
         <Suspense fallback={<Loading/>}>
           <NavBar  />
         </Suspense>
@@ -41,10 +41,10 @@ export default function Home() {
         </Suspense> */}
           {/* <Carrusel /> */}
           <Sobre/>
-          <CtaBanner />
-          <Ubicacion/>
-          <Gallery />
           <Contact />
+          <CtaBanner />
+          {/* <Ubicacion/> */}
+          <Gallery />
       </main>
       <footer>
         <Footer />

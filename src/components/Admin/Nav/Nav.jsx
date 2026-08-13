@@ -41,7 +41,7 @@ export default function Nav( {handleSelectSection} ) {
 
 
   return (
-    <div className="border-gray-200 bg-secondary">
+    <div className="border-gray-200 bg-gradient-secondary">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between flex-row-reverse mx-auto p-4">
         <a href="#" className="flex items-center space-x-3" title='volver al home'> 
           <img src="/logos/logoCentral.webp" className="h-16 rounded-lg" alt="Logo CAVIGLIA" loading='lazy' title="Logo CAVIGLIA"/>

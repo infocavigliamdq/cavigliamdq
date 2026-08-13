@@ -9,6 +9,18 @@ const userData = {
     cuil:'30-71038683-4',
     direccion:'Av Champagnat 1167, Mar del Plata',
     horarios:'8hs a 16hs',
+    horariosDetalle:[
+        'Lunes a Viernes de 8 a 16',
+        'Sábados de 8 a 12'
+    ],
+    instagram:{
+        usuario:'@cavigliarepuestos',
+        url:'https://www.instagram.com/cavigliarepuestos/'
+    },
+    facebook:{
+        usuario:'Caviglia Repuestos',
+        url:'https://www.facebook.com/people/Caviglia-Repuestos/100042666105877/?sk=about&locale=es_LA'
+    },
     administracion: {
         label: 'Administración',
         contacto: 2235383512,

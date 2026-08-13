@@ -1,5 +1,6 @@
 import React from "react";
 import "./Sobre.css";
+import { SectionTitle } from "../ui/SectionTitle";
 
 const Sobre = () => {
   return (
@@ -22,10 +23,7 @@ const Sobre = () => {
         {/* TEXT SECTION */}
         <div className="w-full lg:w-1/2 flex items-center lg:items-start justify-center p-8 lg:py-1 lg:px-8 bg-white z-10">
           <div className="max-w-xl">
-            <h2 className="font-serif text-2xl md:mt-2 italic self-center text-primary">
-              Nuestra Historia
-            </h2>
-            <div className="pt-1 px4 bg-tertiary mb-4"></div>
+            <SectionTitle>Nuestra Historia</SectionTitle>
           
             <h1 className="text-gray-700 mb-4">
               Desde <strong>1980</strong>, en <strong>Mar del Plata</strong>, <strong>Repuestos Caviglia</strong> ofrece soluciones en <strong>repuestos para camiones Fiat</strong>, <strong>IVECO</strong> y maquinaria pesada. Comenzamos como un pequeño negocio familiar.

@@ -10,6 +10,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* El navbar es sticky: compensamos el alto para que los links con ancla
+   (#contacto, #ubicacion, #fotos) no queden tapados al hacer scroll. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
 
 body {
   color: rgb(var(--foreground-rgb));

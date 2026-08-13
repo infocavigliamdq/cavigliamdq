@@ -10,6 +10,10 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        // Degradés azules de marca
+        "gradient-secondary": "linear-gradient(135deg, #1e3a8a 0%, #1e40af 45%, #2563eb 100%)",
+        "gradient-primary": "linear-gradient(135deg, #39338d 0%, #1a2f98 50%, #2563eb 100%)",
+        "gradient-soft": "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
       },
       screens: {
         'xxs': '320px',    // Extra small devices (phones, 480px and up)
@@ -31,10 +35,11 @@ module.exports = {
           whatsHover:'#1ca84f' // color de whats hover
         },
         secondary: {
-          DEFAULT: '#fde815',  // Color de fondo predeterminado
-          hover: '#ffe939',    // Nuevo color de fondo al pasar el mouse
-          active: '#ffe300',   // Color de fondo al hacer clic
-          background:'#fffde9' // Color de fondo secundario
+          DEFAULT: '#1e40af',  // Color de fondo predeterminado
+          hover: '#2563eb',    // Nuevo color de fondo al pasar el mouse
+          active: '#3b82f6',   // Color de acento / clic (azul claro)
+          light: '#93c5fd',    // Azul claro para textos sobre fondo oscuro
+          background:'#eff6ff' // Color de fondo secundario
         },
         tertiary: {
           DEFAULT: '#d9221e',  // Color de fondo predeterminado

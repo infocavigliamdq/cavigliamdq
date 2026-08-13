@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import { SectionTitle } from "../ui/SectionTitle";
 
 const PreguntasFrecuentes = () => {
   const [accordionOpen, setAccordionOpen] = useState({
@@ -44,7 +45,7 @@ const PreguntasFrecuentes = () => {
     <div className="py-8 px-4 max-w-screen-7xl sm:py-16 lg:px-6 overflow-y-auto max-auto " style={{textAlign:"-webkit-center"}}>
       <div className="max-w-screen-md" >
         <div id="accordion-open" data-accordion="open">
-          <h2 className="mb-4 text-3xl md:text-4xl text-center md:text-start tracking-tight font-extrabold text-text-primary-title">Preguntas frecuentes</h2>
+          <SectionTitle>Preguntas frecuentes</SectionTitle>
           {faqData.map((faq) => (
             <div key={faq.id} className="mb-4 border border-gray-200 rounded-xl">
               <h2 id={`accordion-open-heading-${faq.id}`}>
