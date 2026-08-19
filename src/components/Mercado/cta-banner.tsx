@@ -20,10 +20,8 @@ export function CtaBanner() {
           <img
             src="/logos/ML.png"
             alt="MercadoLibre"
-            width={200}
-            height={45}
             loading="lazy"
-            className="h-7 md:h-auto w-22 shrink-0 align-middle"
+            className="w-[150px] sm:w-[180px] md:w-[200px] h-auto max-w-full object-contain shrink-0"
           />
           <span className="md:whitespace-nowrap">la plataforma más elegida para comprar online.</span>
         </div>
