@@ -15,15 +15,36 @@ export function CtaBanner() {
         <SectionTitle>Comprá fácil, rápido y desde donde estés</SectionTitle>
 
         {/* Frase en un solo renglon en desktop; en mobile se permite el salto */}
-        <div className="flex flex-wrap md:flex-nowrap items-center gap-x-2 text-lg md:text-xl text-gray-900">
-          <span className="md:whitespace-nowrap">Ahora también podés encontrarnos en</span>
+        {/* Mobile */}
+        <div className="flex flex-col items-center text-lg text-gray-900 text-center md:hidden">
+          <span>
+            Ahora también podés encontrarnos en la plataforma más elegida para comprar online.
+          </span>
+
           <img
             src="/logos/ML.png"
             alt="MercadoLibre"
             loading="lazy"
-            className="w-[150px] sm:w-[180px] md:w-[200px] h-auto max-w-full object-contain shrink-0"
+            className="w-[180px] h-auto object-contain mt-2"
           />
-          <span className="md:whitespace-nowrap">la plataforma más elegida para comprar online.</span>
+        </div>
+
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-x-2 text-xl text-gray-900">
+          <span className="whitespace-nowrap">
+            Ahora también podés encontrarnos en
+          </span>
+
+          <img
+            src="/logos/ML.png"
+            alt="MercadoLibre"
+            loading="lazy"
+            className="w-[200px] h-auto object-contain shrink-0"
+          />
+
+          <span className="whitespace-nowrap">
+            la plataforma más elegida para comprar online.
+          </span>
         </div>
 
         <div className="max-w-3xl">
